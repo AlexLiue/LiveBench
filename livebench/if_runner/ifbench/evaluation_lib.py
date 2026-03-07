@@ -19,7 +19,7 @@ import collections
 import dataclasses
 import json
 
-from livebench.if_runner.ifbench import instructions_registry
+from if_runner.ifbench import instructions_registry
 
 
 @dataclasses.dataclass

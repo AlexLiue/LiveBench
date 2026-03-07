@@ -8,8 +8,8 @@ import traceback
 
 from jinja2 import StrictUndefined, Template
 
-from livebench.agentic_code_runner.minisweagent import Environment, Model
-from livebench.agentic_code_runner.minisweagent.utils.log import logger
+from agentic_code_runner.minisweagent import Environment, Model
+from agentic_code_runner.minisweagent.utils.log import logger
 
 
 @dataclass

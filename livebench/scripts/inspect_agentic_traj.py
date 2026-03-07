@@ -27,7 +27,7 @@ from rich.table import Table
 from rich import box
 from rich.columns import Columns
 
-from livebench.model.api_model_config import get_model_config
+from model.api_model_config import get_model_config
 
 
 def load_model_answers(model_name: str) -> list[dict[str, Any]]:

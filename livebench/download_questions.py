@@ -3,7 +3,7 @@ import os
 from tqdm import tqdm
 from collections import defaultdict
 
-from livebench.common import (
+from common import (
     LIVE_BENCH_RELEASES,
     get_categories_tasks,
     load_questions,

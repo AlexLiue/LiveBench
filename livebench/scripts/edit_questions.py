@@ -7,9 +7,9 @@ import os
 import glob
 import json
 
-from livebench.common import load_questions_jsonl, make_match_single
-from livebench.gen_ground_truth_judgment import play_a_match_gt
-from livebench.model import get_model_config
+from common import load_questions_jsonl, make_match_single
+from gen_ground_truth_judgment import play_a_match_gt
+from model import get_model_config
 
 
 def prepare_edit(question_ids: list[str]):

@@ -1,4 +1,4 @@
-from livebench.process_results.util import last_boxed_only_string, remove_boxed
+from process_results.util import last_boxed_only_string, remove_boxed
 import re
 
 

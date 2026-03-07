@@ -8,7 +8,7 @@ import argparse
 import subprocess
 from collections import defaultdict, Counter
 import traceback
-from livebench.model.api_model_config import get_model_config
+from model.api_model_config import get_model_config
 
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description='Find syntax errors in model outputs')

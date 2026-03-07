@@ -4,9 +4,9 @@ import json
 from pathlib import Path
 from typing import Callable
 
-from livebench.agentic_code_runner.minisweagent import Environment, Model
-from livebench.agentic_code_runner.minisweagent.agents.default import AgentConfig, DefaultAgent
-from livebench.agentic_code_runner.minisweagent.utils.log import logger
+from agentic_code_runner.minisweagent import Environment, Model
+from agentic_code_runner.minisweagent.agents.default import AgentConfig, DefaultAgent
+from agentic_code_runner.minisweagent.utils.log import logger
 
 
 class ReplayAgent(DefaultAgent):

@@ -2,7 +2,7 @@ import json
 from collections import defaultdict
 import argparse
 from pathlib import Path
-from livebench.model.api_model_config import get_model_config
+from model.api_model_config import get_model_config
 from rich.console import Console
 from rich.table import Table
 

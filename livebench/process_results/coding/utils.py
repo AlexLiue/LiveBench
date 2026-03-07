@@ -7,17 +7,17 @@ import base64
 from enum import Enum
 import subprocess
 
-from livebench.common import LIVE_BENCH_ROOT_PATH
-from livebench.code_runner.eval import untrusted_check, PASS
-from livebench.lcb_runner.utils.extraction_utils import extract_code
-from livebench.lcb_runner.evaluation.compute_code_generation_metrics import codegen_metrics
-from livebench.agentic_code_runner.eval.harness.constant import (
+from common import LIVE_BENCH_ROOT_PATH
+from code_runner.eval import untrusted_check, PASS
+from lcb_runner.utils.extraction_utils import extract_code
+from lcb_runner.evaluation.compute_code_generation_metrics import codegen_metrics
+from agentic_code_runner.eval.harness.constant import (
     EVALUATION_WORKDIR,
     FIX_PATCH_RUN_LOG_FILE,
     REPORT_FILE,
 )
-from livebench.agentic_code_runner.eval.harness.report import Report
-from livebench.agentic_code_runner.eval.harness.test_result import TestStatus
+from agentic_code_runner.eval.harness.report import Report
+from agentic_code_runner.eval.harness.test_result import TestStatus
 
 import shutil
 

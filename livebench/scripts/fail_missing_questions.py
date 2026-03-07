@@ -12,7 +12,7 @@ from pathlib import Path
 import uuid
 import time
 
-from livebench.model.completions import API_ERROR_OUTPUT
+from model.completions import API_ERROR_OUTPUT
 
 
 def load_jsonl(file_path: Path) -> list[dict]:

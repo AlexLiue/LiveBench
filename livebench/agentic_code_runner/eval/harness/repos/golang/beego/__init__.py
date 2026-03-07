@@ -1,1 +1,1 @@
-from livebench.agentic_code_runner.eval.harness.repos.golang.beego.beego import *
+from agentic_code_runner.eval.harness.repos.golang.beego.beego import *

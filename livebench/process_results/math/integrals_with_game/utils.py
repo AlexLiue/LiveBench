@@ -201,7 +201,7 @@ def integrals_with_game_process_results(ground_truth: str, llm_answer: str, debu
     # If no solution tag or couldn't parse, try other extraction methods
     if score == 0:
         # Try to find answer in boxed format
-        from livebench.process_results.util import last_boxed_only_string, remove_boxed
+        from process_results.util import last_boxed_only_string, remove_boxed
         
         llm_answer_normalized = llm_answer.replace("\\\\fbox{", "\\\\boxed{")
         last_boxed = last_boxed_only_string(llm_answer_normalized)

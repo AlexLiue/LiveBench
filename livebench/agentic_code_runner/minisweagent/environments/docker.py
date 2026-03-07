@@ -6,7 +6,7 @@ import uuid
 from dataclasses import asdict, dataclass, field
 from typing import Any
 
-from livebench.agentic_code_runner.minisweagent.utils.log import logger
+from agentic_code_runner.minisweagent.utils.log import logger
 
 
 @dataclass

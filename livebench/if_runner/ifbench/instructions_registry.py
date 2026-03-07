@@ -14,7 +14,7 @@
 
 """Registry of all instructions."""
 
-from livebench.if_runner.ifbench import instructions
+from if_runner.ifbench import instructions
 
 
 def check_conflicts(instruction_ids: list[str]) -> list[tuple[str, str]]:

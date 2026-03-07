@@ -4,7 +4,7 @@ import os
 import argparse
 import importlib.util
 
-from livebench.common import load_questions_jsonl, LIVE_BENCH_RELEASES
+from common import load_questions_jsonl, LIVE_BENCH_RELEASES
 
 def calc_attribute_stats(file_prefixes, attribute_name, livebench_release=None):
     # Track stats by task

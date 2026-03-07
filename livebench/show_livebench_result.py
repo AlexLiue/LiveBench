@@ -284,7 +284,7 @@ def display_result_single(args):
     question_id_set = set([q['question_id'] for q in questions_all])
 
     df_all = pd.concat((pd.read_json(f, lines=True) for f in input_files), ignore_index=True)
-    df = df_all[["model", "score", "task", "category","question_id"]]
+    df = df_all[["model", "score", "task", "category","question_id", "cost"]]
     df = df[df["score"] != -1]
     df = df[df['question_id'].isin(question_id_set)]
     df['model'] = df['model'].str.lower()

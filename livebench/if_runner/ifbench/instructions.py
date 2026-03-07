@@ -29,7 +29,7 @@ from collections import Counter
 import csv
 import io
 
-from livebench.if_runner.ifbench import instructions_util
+from if_runner.ifbench import instructions_util
 
 if not spacy.util.is_package("en_core_web_sm"):
 	download('en_core_web_sm')

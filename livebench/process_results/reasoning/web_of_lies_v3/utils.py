@@ -1,6 +1,6 @@
 import re
 import itertools
-from livebench.process_results.util import last_boxed_only_string, remove_boxed
+from process_results.util import last_boxed_only_string, remove_boxed
 
 def web_of_lies_v3_process_results(ground_truth: str, llm_answer: str, debug=False) -> float:
     score = 0

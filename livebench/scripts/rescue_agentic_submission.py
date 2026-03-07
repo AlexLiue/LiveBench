@@ -8,14 +8,14 @@ from pathlib import Path
 import shortuuid
 import yaml
 
-from livebench.common import (
+from common import (
     LIVE_BENCH_RELEASES,
     LIVE_BENCH_ROOT_PATH,
     load_questions_jsonl,
     reorg_answer_file,
 )
-from livebench.model import get_model_config
-from livebench.model.completions import API_ERROR_OUTPUT
+from model import get_model_config
+from model.completions import API_ERROR_OUTPUT
 
 
 def _split_model_name(model_name: str) -> tuple[str, str]:

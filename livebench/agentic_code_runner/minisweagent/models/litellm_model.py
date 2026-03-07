@@ -14,8 +14,8 @@ from tenacity import (
     wait_exponential,
 )
 
-from livebench.agentic_code_runner.minisweagent.models import GLOBAL_MODEL_STATS
-from livebench.agentic_code_runner.minisweagent.utils.log import logger
+from agentic_code_runner.minisweagent.models import GLOBAL_MODEL_STATS
+from agentic_code_runner.minisweagent.utils.log import logger
 
 
 @dataclass

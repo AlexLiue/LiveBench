@@ -3,7 +3,7 @@ import numpy as np
 from ast import literal_eval
 import json
 import ast
-from livebench.process_results.util import last_boxed_only_string, remove_boxed
+from process_results.util import last_boxed_only_string, remove_boxed
 
 def clean_llm_output(s):
     pattern_solution = r'<solution>(.*?)</solution>'

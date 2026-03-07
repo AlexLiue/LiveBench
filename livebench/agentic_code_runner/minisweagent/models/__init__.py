@@ -7,7 +7,7 @@ import importlib
 import os
 import threading
 
-from livebench.agentic_code_runner.minisweagent import Model
+from agentic_code_runner.minisweagent import Model
 
 
 class GlobalModelStats:
@@ -96,6 +96,6 @@ def get_model_class(model_class: str = "") -> type:
             raise ValueError(msg)
 
     # Default to LitellmModel
-    from livebench.agentic_code_runner.minisweagent.models.litellm_model import LitellmModel
+    from agentic_code_runner.minisweagent.models.litellm_model import LitellmModel
 
     return LitellmModel

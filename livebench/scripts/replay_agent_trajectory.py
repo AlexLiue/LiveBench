@@ -24,10 +24,10 @@ from pathlib import Path
 
 import shortuuid
 
-from livebench.gen_api_answer import setup_model
-from livebench.common import LIVE_BENCH_ROOT_PATH
-from livebench.model.api_model_config import get_model_config
-from livebench.agentic_code_runner.minisweagent.run_inference import run_agentic_coding_inference
+from gen_api_answer import setup_model
+from common import LIVE_BENCH_ROOT_PATH
+from model.api_model_config import get_model_config
+from agentic_code_runner.minisweagent.run_inference import run_agentic_coding_inference
 
 
 def load_model_answers(model_name: str) -> list[dict]:

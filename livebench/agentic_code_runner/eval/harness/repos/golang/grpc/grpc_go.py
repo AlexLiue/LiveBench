@@ -1,9 +1,9 @@
 import re
 from typing import Optional, Union
 
-from livebench.agentic_code_runner.eval.harness.image import Config, File, Image
-from livebench.agentic_code_runner.eval.harness.instance import Instance, TestResult
-from livebench.agentic_code_runner.eval.harness.pull_request import PullRequest
+from agentic_code_runner.eval.harness.image import Config, File, Image
+from agentic_code_runner.eval.harness.instance import Instance, TestResult
+from agentic_code_runner.eval.harness.pull_request import PullRequest
 
 
 class GrpcGoImageBase(Image):

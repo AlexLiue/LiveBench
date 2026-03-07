@@ -1,5 +1,5 @@
-from livebench.common import load_questions_jsonl, load_test_cases_jsonl
-from livebench.process_results.coding.utils import LCB_generation_process_results
+from common import load_questions_jsonl, load_test_cases_jsonl
+from process_results.coding.utils import LCB_generation_process_results
 
 def check_coding_questions(questions_file):
     questions = load_questions_jsonl(questions_file)

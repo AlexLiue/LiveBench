@@ -35,7 +35,7 @@ from typing import Any, Dict, List, Tuple, Union
 
 import numpy as np
 
-from livebench.code_runner.eval.utils import (
+from code_runner.eval.utils import (
     create_tempdir,
     reliability_guard,
     swallow_io,

@@ -3,7 +3,7 @@
 import copy
 import importlib
 
-from livebench.agentic_code_runner.minisweagent import Environment
+from agentic_code_runner.minisweagent import Environment
 
 _ENVIRONMENT_MAPPING = {
     "docker": "livebench.agentic_code_runner.minisweagent.environments.docker.DockerEnvironment",

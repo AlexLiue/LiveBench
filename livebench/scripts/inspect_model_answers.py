@@ -17,9 +17,9 @@ import io
 import re
 import contextlib
 from typing import Any
-from livebench.model import get_model_config
-from livebench.common import load_questions_jsonl
-from livebench.gen_ground_truth_judgment import play_a_match_gt, MatchSingle
+from model import get_model_config
+from common import load_questions_jsonl
+from gen_ground_truth_judgment import play_a_match_gt, MatchSingle
 from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel

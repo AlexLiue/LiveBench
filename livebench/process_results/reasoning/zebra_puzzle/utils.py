@@ -1,6 +1,6 @@
 
 import re
-from livebench.process_results.util import last_boxed_only_string, remove_boxed
+from process_results.util import last_boxed_only_string, remove_boxed
 
 def zebra_puzzle_process_results_old(ground_truth: str, llm_answer: str, debug=False) -> int:
     # Mapping of numbers to words for 1 to 9

@@ -12,9 +12,9 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-from livebench.agentic_code_runner.eval.harness.image import Config, Image
-from livebench.agentic_code_runner.eval.harness.pull_request import PullRequest
-from livebench.agentic_code_runner.eval.harness.test_result import TestResult
+from agentic_code_runner.eval.harness.image import Config, Image
+from agentic_code_runner.eval.harness.pull_request import PullRequest
+from agentic_code_runner.eval.harness.test_result import TestResult
 
 
 class Instance:

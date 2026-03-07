@@ -15,35 +15,37 @@ import numpy as np
 from tqdm import tqdm
 
 # todo: find a better solution than all these imports.
-from livebench.model import get_model_config
-from livebench.process_results.data_analysis.tablereformat.utils import table_process_results
-from livebench.process_results.data_analysis.cta.utils import cta_process_results
-from livebench.process_results.data_analysis.tablejoin.utils import joinmap_process_results
-from livebench.process_results.reasoning.web_of_lies_v2.utils import web_of_lies_process_results
-from livebench.process_results.reasoning.house_traversal.utils import house_traversal_process_results
-from livebench.process_results.reasoning.zebra_puzzle.utils import get_zebra_puzzle_evaluator
-from livebench.process_results.reasoning.spatial.utils import spatial_process_results
-from livebench.process_results.reasoning.sudoku.utils import sudoku_process_results
-from livebench.process_results.math.math_competitions.utils import mathcontest_process_results,aime_process_results 
-from livebench.process_results.math.olympiad.utils import proof_rearrangement_process_results
-from livebench.process_results.math.AMPS_Hard.utils import amps_hard_process_results
-from livebench.process_results.math.integrals_with_game.utils import integrals_with_game_process_results 
-from livebench.process_results.writing.plot_unscrambling.utils import plot_unscrambling_process_results
-from livebench.process_results.writing.typos.utils import typos_process_results
-from livebench.process_results.writing.connections.utils import get_connections_puzzle_evaluator
-from livebench.process_results.coding.utils import LCB_generation_process_results, code_generation_process_results, agentic_coding_process_results
-from livebench.process_results.instruction_following.utils import instruction_following_process_results, ifbench_process_results
-from livebench.process_results.reasoning.web_of_lies_v3.utils import web_of_lies_v3_process_results
-from livebench.process_results.reasoning.theory_of_mind.utils import theory_of_mind_process_results
-from livebench.process_results.reasoning.logic_with_navigation.utils import logic_with_navigation_process_results
-from livebench.process_results.data_analysis.consecutive_events.utils import consecutive_events_process_results
-from livebench.common import (
+from model import get_model_config
+from process_results.data_analysis.tablereformat.utils import table_process_results
+from process_results.data_analysis.cta.utils import cta_process_results
+from process_results.data_analysis.tablejoin.utils import joinmap_process_results
+from process_results.reasoning.web_of_lies_v2.utils import web_of_lies_process_results
+from process_results.reasoning.house_traversal.utils import house_traversal_process_results
+from process_results.reasoning.zebra_puzzle.utils import get_zebra_puzzle_evaluator
+from process_results.reasoning.spatial.utils import spatial_process_results
+from process_results.reasoning.sudoku.utils import sudoku_process_results
+from process_results.math.math_competitions.utils import mathcontest_process_results,aime_process_results 
+from process_results.math.olympiad.utils import proof_rearrangement_process_results
+from process_results.math.AMPS_Hard.utils import amps_hard_process_results
+from process_results.math.integrals_with_game.utils import integrals_with_game_process_results 
+from process_results.writing.plot_unscrambling.utils import plot_unscrambling_process_results
+from process_results.writing.typos.utils import typos_process_results
+from process_results.writing.connections.utils import get_connections_puzzle_evaluator
+from process_results.coding.utils import LCB_generation_process_results, code_generation_process_results, agentic_coding_process_results
+from process_results.instruction_following.utils import instruction_following_process_results, ifbench_process_results
+from process_results.reasoning.web_of_lies_v3.utils import web_of_lies_v3_process_results
+from process_results.reasoning.theory_of_mind.utils import theory_of_mind_process_results
+from process_results.reasoning.logic_with_navigation.utils import logic_with_navigation_process_results
+from process_results.data_analysis.consecutive_events.utils import consecutive_events_process_results
+from common import (
     LIVE_BENCH_RELEASES,
     load_questions,
     load_questions_jsonl,
     load_model_answers,
     check_data,
     get_model_list,
+
+
     load_test_cases_jsonl,
     make_match_single,
     MatchSingle,
@@ -220,7 +222,10 @@ def play_a_match_gt(match: MatchSingle, output_file: str | None = None, debug=Fa
     # Add answer_id if available
     if "answer_id" in answer:
         result["answer_id"] = answer["answer_id"]
-    
+
+    if "cost" in answer:
+        result["cost"] = answer["cost"]
+
     if "subtask" in question.keys():
         result["subtask"] = question["subtask"]
     print(
@@ -412,6 +417,9 @@ def gen_judgments(
                     if "answer_id" in model_answer:
                         result["answer_id"] = model_answer["answer_id"]
 
+                    if "cost" in model_answer:
+                        result["cost"] = model_answer["cost"]
+
                     print(
                         f"question: {question_id}, model: {model_id}, "
                         f"score: {eval_result[question_id]}, ")
@@ -463,7 +471,10 @@ def gen_judgments(
                 answer = model_answers.get(model_id, {}).get(question_id, {})
                 if answer and "answer_id" in answer:
                     result["answer_id"] = answer["answer_id"]
-                    
+
+                if answer and "cost" in answer:
+                    result["cost"] = answer["cost"]
+
                 print(
                     f"question: {question_id}, turn: {turn}, model: {model_id}, "
                     f"score: {score}, ")

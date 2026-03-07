@@ -23,7 +23,7 @@ from typing import Dict, Literal, Optional
 from dataclasses_json import dataclass_json
 from tqdm import tqdm
 
-from livebench.agentic_code_runner.eval.harness.constant import (
+from agentic_code_runner.eval.harness.constant import (
     BUILD_IMAGE_LOG_FILE,
     BUILD_IMAGE_WORKDIR,
     EVALUATION_WORKDIR,
@@ -31,15 +31,15 @@ from livebench.agentic_code_runner.eval.harness.constant import (
     REPORT_FILE,
     RUN_EVALUATION_LOG_FILE,
 )
-from livebench.agentic_code_runner.eval.harness.dataset import Dataset
-from livebench.agentic_code_runner.eval.harness.gen_report import CliArgs as ReportBuilder
-from livebench.agentic_code_runner.eval.harness.image import Config, Image, SWEImageDefault
-from livebench.agentic_code_runner.eval.harness.instance import Instance
-from livebench.agentic_code_runner.eval.harness.pull_request import PullRequestBase, Repository
-from livebench.agentic_code_runner.eval.utils import docker_util, git_util
-from livebench.agentic_code_runner.eval.utils.args_util import ArgumentParser
-from livebench.agentic_code_runner.eval.utils.fs_utils import copy_source_code
-from livebench.agentic_code_runner.eval.utils.logger import get_non_propagate_logger, setup_logger
+from agentic_code_runner.eval.harness.dataset import Dataset
+from agentic_code_runner.eval.harness.gen_report import CliArgs as ReportBuilder
+from agentic_code_runner.eval.harness.image import Config, Image, SWEImageDefault
+from agentic_code_runner.eval.harness.instance import Instance
+from agentic_code_runner.eval.harness.pull_request import PullRequestBase, Repository
+from agentic_code_runner.eval.utils import docker_util, git_util
+from agentic_code_runner.eval.utils.args_util import ArgumentParser
+from agentic_code_runner.eval.utils.fs_utils import copy_source_code
+from agentic_code_runner.eval.utils.logger import get_non_propagate_logger, setup_logger
 
 
 def get_parser() -> ArgumentParser:

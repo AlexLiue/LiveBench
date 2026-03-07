@@ -15,8 +15,8 @@ from prompt_toolkit.shortcuts import PromptSession
 from rich.console import Console
 from rich.rule import Rule
 
-from livebench.agentic_code_runner.minisweagent import global_config_dir
-from livebench.agentic_code_runner.minisweagent.agents.default import AgentConfig, DefaultAgent, LimitsExceeded, NonTerminatingException, Submitted
+from agentic_code_runner.minisweagent import global_config_dir
+from agentic_code_runner.minisweagent.agents.default import AgentConfig, DefaultAgent, LimitsExceeded, NonTerminatingException, Submitted
 
 console = Console(highlight=False)
 prompt_session = PromptSession(history=FileHistory(global_config_dir / "interactive_history.txt"))

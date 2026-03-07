@@ -3,7 +3,7 @@ import time
 from dataclasses import asdict, dataclass
 from typing import Any
 
-from livebench.agentic_code_runner.minisweagent.models import GLOBAL_MODEL_STATS
+from agentic_code_runner.minisweagent.models import GLOBAL_MODEL_STATS
 
 
 @dataclass

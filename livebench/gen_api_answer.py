@@ -13,10 +13,10 @@ import glob
 import shortuuid
 import tqdm
 
-from livebench.model.api_model_config import APIKwargs
-from livebench.agentic_code_runner.minisweagent.run_inference import run_agentic_coding_inference
+from model.api_model_config import APIKwargs
+from agentic_code_runner.minisweagent.run_inference import run_agentic_coding_inference
 
-from livebench.common import (
+from common import (
     LIVE_BENCH_RELEASES,
     reorg_answer_file,
     get_categories_tasks,
@@ -27,7 +27,7 @@ from livebench.common import (
     check_agentic_coding_requirements
 )
 
-from livebench.model import ModelConfig, get_model_config, get_api_function
+from model import ModelConfig, get_model_config, get_api_function
 
 
 def get_answer(
@@ -58,6 +58,7 @@ def get_answer(
         answer_file: The path to the file in which to write answers
         api_dict: A dictionary specifying the base API URL and key for model requests
     """
+    start = time.time()
 
     assert (
         force_temperature is not None and "required_temperature" in question.keys()
@@ -112,6 +113,7 @@ def get_answer(
 
         choices.append({"index": i, "turns": turns})
 
+    end = time.time()
     # Dump answers
     ans = {
         "question_id": question["question_id"],
@@ -119,6 +121,7 @@ def get_answer(
         "model_id": model_display_name_override if model_display_name_override else model_config.display_name.lower(),
         "choices": choices,
         "tstamp": time.time(),
+        "cost": end-start,
         "total_output_tokens": total_num_tokens,
         "api_info": {
             "provider": provider if provider != 'local' else api_dict['api_base'],

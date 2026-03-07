@@ -11,7 +11,7 @@ def truncate_partial_solution(
     solution: str, difficulty: Literal["easy", "medium", "hard"]
 ):
     """
-    Copy of the function from livebench-private/question_generation/coding/util.py.
+    Copy of the function from private/question_generation/coding/util.py.
     Used to generate partial solutions with the specified difficulty.
     """
     if difficulty == "easy":
@@ -30,7 +30,7 @@ def truncate_partial_solution(
 
 def get_generic_question_template_answer_completion(question_content, partial_completion):
     """
-    Copy of the function from livebench-private/question_generation/coding/util.py.
+    Copy of the function from private/question_generation/coding/util.py.
     Used to generate completion prompts with the specified partial completion.
     """
     prompt = "### Instructions: You are an expert Python programmer. You will be given a question (problem specification) and the first lines of Python solution to this problem, and will write in Python the remaining lines of the program to produce a correct Python program that matches the specification and passes all tests. You will NOT return anything except for the second part of the program that you wrote.\n"

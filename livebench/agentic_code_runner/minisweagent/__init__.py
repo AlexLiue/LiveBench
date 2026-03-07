@@ -18,7 +18,7 @@ import dotenv
 from platformdirs import user_config_dir
 from rich.console import Console
 
-from livebench.agentic_code_runner.minisweagent.utils.log import logger
+from agentic_code_runner.minisweagent.utils.log import logger
 
 package_dir = Path(__file__).resolve().parent
 

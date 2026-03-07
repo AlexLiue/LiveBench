@@ -22,17 +22,17 @@ from typing import Dict, Literal, Optional, Tuple, Union
 from dataclasses_json import dataclass_json
 from tqdm import tqdm
 
-from livebench.agentic_code_runner.eval.harness.constant import (
+from agentic_code_runner.eval.harness.constant import (
     EVALUATION_WORKDIR,
     FINAL_REPORT_FILE,
     GENERATE_REPORT_LOG_FILE,
     INSTANCE_WORKDIR,
 )
-from livebench.agentic_code_runner.eval.harness.dataset import Dataset
-from livebench.agentic_code_runner.eval.harness.pull_request import PullRequest
-from livebench.agentic_code_runner.eval.harness.report import FinalReport, Report, ReportTask
-from livebench.agentic_code_runner.eval.utils.args_util import ArgumentParser
-from livebench.agentic_code_runner.eval.utils.logger import setup_logger
+from agentic_code_runner.eval.harness.dataset import Dataset
+from agentic_code_runner.eval.harness.pull_request import PullRequest
+from agentic_code_runner.eval.harness.report import FinalReport, Report, ReportTask
+from agentic_code_runner.eval.utils.args_util import ArgumentParser
+from agentic_code_runner.eval.utils.logger import setup_logger
 
 
 def get_parser() -> ArgumentParser:

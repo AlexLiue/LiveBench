@@ -15,7 +15,7 @@ from pathlib import Path
 import re
 from typing import Optional, TYPE_CHECKING
 
-from livebench.model.api_model_config import get_model_config
+from model.api_model_config import get_model_config
 
 from dotenv import load_dotenv
 
@@ -450,7 +450,7 @@ def filter_questions(questions, answer_file, resume=False, retry_failures=False)
     If resume is true, include only unanswered questions.
     If retry_failures is true, include questions for which the existing answer is an error.
     """
-    from livebench.model.completions import API_ERROR_OUTPUT
+    from model.completions import API_ERROR_OUTPUT
     reorg_answer_file(answer_file)
     new_questions_ids = set([q["question_id"] for q in questions])
     

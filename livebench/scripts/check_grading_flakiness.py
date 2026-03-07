@@ -5,10 +5,10 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
-from livebench.common import LIVE_BENCH_ROOT_PATH
-from livebench.agentic_code_runner.eval.harness.report import Report
-from livebench.agentic_code_runner.eval.harness.test_result import TestStatus
-from livebench.process_results.coding.utils import agentic_coding_process_results
+from common import LIVE_BENCH_ROOT_PATH
+from agentic_code_runner.eval.harness.report import Report
+from agentic_code_runner.eval.harness.test_result import TestStatus
+from process_results.coding.utils import agentic_coding_process_results
 
 parser = argparse.ArgumentParser(description='Check the grading flakiness of a task for a given model\'s answers')
 parser.add_argument('--model', required=True, nargs='+', help='Name of the model(s) to check')

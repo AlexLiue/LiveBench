@@ -9,7 +9,7 @@ import traceback
 import warnings
 from multiprocessing import Process, Queue
 
-from livebench.process_results.util import last_boxed_only_string, remove_boxed
+from process_results.util import last_boxed_only_string, remove_boxed
 
 try:
     import sympy

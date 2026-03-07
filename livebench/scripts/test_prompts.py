@@ -12,10 +12,10 @@ import os
 import copy
 from typing import List, Dict, Any
 
-from livebench.common import load_questions_jsonl, LIVE_BENCH_RELEASES
-from livebench.model import get_model_config
-from livebench.gen_api_answer import run_questions
-from livebench.gen_ground_truth_judgment import gen_judgments
+from common import load_questions_jsonl, LIVE_BENCH_RELEASES
+from model import get_model_config
+from gen_api_answer import run_questions
+from gen_ground_truth_judgment import gen_judgments
 
 
 def load_prompts(prompt_file: str) -> List[str]:

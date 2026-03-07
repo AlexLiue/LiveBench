@@ -5,7 +5,7 @@ import subprocess
 import sys
 from collections import defaultdict
 import os
-from livebench.model.api_model_config import get_model_config
+from model.api_model_config import get_model_config
 
 def find_error_questions(root_dir, target_model_id=None, old_max_tokens=None, old_providers=None, replace_provider=None, bench_name=None, replace_api_name=None):
     model_errors = defaultdict(list)

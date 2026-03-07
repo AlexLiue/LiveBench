@@ -3,7 +3,7 @@ import json
 import argparse
 from collections import defaultdict
 
-from livebench.model.api_model_config import get_model_config
+from model.api_model_config import get_model_config
 
 
 def check_errors(bench_names: list[str] | None = None, model_names: list[str] | None = None, include_empty_turns: bool = False):

@@ -18,16 +18,16 @@ from typing import Optional, Tuple, Union
 
 from dataclasses_json import config, dataclass_json
 
-from livebench.agentic_code_runner.eval.harness.constant import (
+from agentic_code_runner.eval.harness.constant import (
     FIX_PATCH_RUN_LOG_FILE,
     REPORT_FILE,
     RUN_LOG_FILE,
     TEST_PATCH_RUN_LOG_FILE,
 )
-from livebench.agentic_code_runner.eval.harness.image import Config
-from livebench.agentic_code_runner.eval.harness.instance import Instance
-from livebench.agentic_code_runner.eval.harness.pull_request import Base, PullRequest, PullRequestBase
-from livebench.agentic_code_runner.eval.harness.test_result import Test, TestResult, TestStatus
+from agentic_code_runner.eval.harness.image import Config
+from agentic_code_runner.eval.harness.instance import Instance
+from agentic_code_runner.eval.harness.pull_request import Base, PullRequest, PullRequestBase
+from agentic_code_runner.eval.harness.test_result import Test, TestResult, TestStatus
 
 
 @dataclass_json

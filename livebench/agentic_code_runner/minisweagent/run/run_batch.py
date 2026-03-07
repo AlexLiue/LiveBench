@@ -15,15 +15,15 @@ import yaml
 from jinja2 import StrictUndefined, Template
 from rich.live import Live
 
-from livebench.agentic_code_runner.minisweagent import Environment
-from livebench.agentic_code_runner.minisweagent.agents.default import DefaultAgent
-from livebench.agentic_code_runner.minisweagent.agents.replay import ReplayAgent
-from livebench.agentic_code_runner.minisweagent.config import get_config_path
-from livebench.agentic_code_runner.minisweagent.environments import get_environment
-from livebench.agentic_code_runner.minisweagent.models import get_model
-from livebench.agentic_code_runner.minisweagent.run.batch_progress import RunBatchProgressManager
-from livebench.agentic_code_runner.minisweagent.run.utils.save import save_traj
-from livebench.agentic_code_runner.minisweagent.utils.log import add_file_handler, logger
+from agentic_code_runner.minisweagent import Environment
+from agentic_code_runner.minisweagent.agents.default import DefaultAgent
+from agentic_code_runner.minisweagent.agents.replay import ReplayAgent
+from agentic_code_runner.minisweagent.config import get_config_path
+from agentic_code_runner.minisweagent.environments import get_environment
+from agentic_code_runner.minisweagent.models import get_model
+from agentic_code_runner.minisweagent.run.batch_progress import RunBatchProgressManager
+from agentic_code_runner.minisweagent.run.utils.save import save_traj
+from agentic_code_runner.minisweagent.utils.log import add_file_handler, logger
 
 _HELP_TEXT = """Run mini-SWE-agent on LiveBench instances.
 """
