@@ -232,7 +232,10 @@ def display_result_single(args):
         r for r in LIVE_BENCH_RELEASES if r <= args.livebench_release_option
     ])
 
+    question_files = []
+    answer_files = []
     input_files = []
+
     for bench in args.bench_name:
         files = (
             glob.glob(f"data/{bench}/**/model_judgment/ground_truth_judgment.jsonl", recursive=True)
@@ -268,14 +271,19 @@ def display_result_single(args):
                 questions_all.extend(questions)
     elif args.question_source == "jsonl":
         for bench in args.bench_name:
-            list_of_question_files = []
+
             original_question_file = f"data/{bench}/question.jsonl"
             if os.path.exists(original_question_file):
-                list_of_question_files = [original_question_file]
+                question_files = [original_question_file]
             else:
-                list_of_question_files = glob.glob(f"data/{bench}/**/question.jsonl", recursive=True)
+                question_files = glob.glob(f"data/{bench}/**/question.jsonl", recursive=True)
+            original_answer_file = f"data/{bench}/model_answer/*.jsonl"
+            if os.path.exists(original_answer_file):
+                answer_files = [original_answer_file]
+            else:
+                answer_files = glob.glob(f"data/{bench}/**/model_answer/*.jsonl", recursive=True)
 
-            for question_file in list_of_question_files:
+            for question_file in question_files:
                 print(question_file)
                 questions = load_questions_jsonl(question_file, release_set, args.livebench_release_option, None)
                 questions_all.extend(questions)
@@ -289,6 +297,7 @@ def display_result_single(args):
     df = df[df['question_id'].isin(question_id_set)]
     df['model'] = df['model'].str.lower()
     df["score"] *= 100
+    df["cost"] = df["cost"].apply(lambda x: round(x, 2))
 
     if args.model_list is not None:
         model_list = [get_model_config(x).display_name for x in args.model_list]
@@ -322,6 +331,15 @@ def display_result_single(args):
 
     df = df[df['question_id'].isin([q['question_id'] for q in questions_all])]
 
+    df_questions =  pd.concat((pd.read_json(f, lines=True) for f in question_files), ignore_index=True)
+    df_questions = df_questions[["question_id","category","question_title","citation"]]
+
+    df_answers = pd.concat((pd.read_json(f, lines=True) for f in answer_files), ignore_index=True)
+    df_answers = df_answers[["question_id", "model_id", "choices", "total_output_tokens"]]
+    df_answers.columns = ["question_id", "model", "choices", "total_output_tokens"]
+
+    df = pd.merge(df, df_questions, on=['question_id', 'category'], how='left')
+    df = pd.merge(df, df_answers, on=['question_id', 'model'], how='left')
     df.to_csv('df_raw.csv')
 
     print("\n########## All Tasks ##########")
