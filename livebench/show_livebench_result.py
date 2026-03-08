@@ -9,13 +9,13 @@ import os
 import re
 import numpy as np
 
-from livebench.common import (
+from common import (
     LIVE_BENCH_RELEASES,
     get_categories_tasks,
     load_questions,
     load_questions_jsonl
 )
-from livebench.model import get_model_config
+from model import get_model_config
 
 pd.set_option('display.max_columns', 10)
 pd.set_option('display.width', None)
